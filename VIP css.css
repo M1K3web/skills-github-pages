@@ -1,0 +1,217 @@
+select {
+	width:200px;
+	height: 200px;
+	background-color:black;
+	border-radius: 16px; /* bordi più rotondi */
+	border-color:orange;
+	border-right-width:4px;
+}
+
+
+option{
+	color: white;
+	background-color: black;
+	padding: 12px;
+	margin-top: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	font-family: Comic Sans MS;
+	font-size:16px;
+	border-radius: 16px;
+}
+
+option:hover {
+	    background-color: orange;
+	    transform: scale(1.1); /*Più grande al passaggio del mouse */ 
+		color:black;
+}
+
+.bar-scor::-webkit-scrollbar{ /*seleziona la barra di scorrimento. "bar-scor" è la classe del select*/
+	border-radius: 19px;
+	background-color:white;
+	width:20px;
+
+}
+
+.bar-scor::-webkit-scrollbar-track{ /*seleziona lo sfondo della barra di scorrimento*/
+	background-color:orange;
+		border-radius: 22px;
+
+}
+
+.bar-scor::-webkit-scrollbar-thumb{ /*seleziona il cursore della barra di scorrimento*/
+	background-color:white;
+		border-radius: 10px;
+}
+
+li {
+	color: white; 
+	font-size: 50px;
+}
+
+.opzione {
+	padding:10px;
+	border:1px solid #ccc;
+}
+
+.opzione.selezionata {
+	background-color:orange;
+}
+
+#torna-su{
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	border:0px solid;
+	padding: 10px;
+	border-radius:5px;
+	cursor: pointer;
+}
+
+fieldset{
+	margin-left:35%;
+	margin-right:35%;
+}
+
+
+
+/* === togli lo style di default del bottone ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* stile del bottone */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: red;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* come diventa il testo quando ci passo il cursore */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+#right {
+	text-align: right;
+	padding: 10px;
+}
+p {
+	color:white;
+	font-size:35px;
+}
+
+input[type="submit"] {
+	width: 150px ;
+	height:40px;
+	color:white;
+	font-size:20px;
+	background-color:black;
+	border-color:orange;
+	border-radius:15px;
+	cursor:pointer;
+	font-family: Comic Sans MS;
+}
+
+input[type="submit"]:hover {
+	    background-color: orange;
+	    transform: scale(1.1);
+		color:black;
+}
+
+/* Scorrimento immagini */
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* o una larghezza fissa */
+}
+
+.marquee {
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee-track {
+    display: flex;
+    white-space: nowrap;
+    transition: transform 0.3s ease-in-out; /* Animazione più veloce */
+}
+
+.marquee-track img {
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+}
+
+
+/*CAROSELLO IMMAGINI*/
+.carousel {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+  width: 200px;
+  height: 200px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.c-item {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #0aff9d;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0d1117;
+  box-shadow: 0 0 20px #00ff9dcc;
+  transition: transform 0.5s;
+}
+
+.c-item:hover {
+  transform: scale(1.3);
+}
+
+/* Posizionamento degli elementi del carosello */
+.c-item:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
+.c-item:nth-child(2) { transform: rotateY(72deg) translateZ(150px); }
+.c-item:nth-child(3) { transform: rotateY(144deg) translateZ(150px); }
+.c-item:nth-child(4) { transform: rotateY(216deg) translateZ(150px); }
+.c-item:nth-child(5) { transform: rotateY(288deg) translateZ(150px); }
